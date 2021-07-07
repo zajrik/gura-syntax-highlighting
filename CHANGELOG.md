@@ -1,3 +1,7 @@
+## 1.0.5
+
+- Add highlighting for `nan`
+
 ## 1.0.4
 
 - Improve number highlighting

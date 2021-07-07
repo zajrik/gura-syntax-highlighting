@@ -112,7 +112,8 @@
 				{ "include": "#number-hex" },
 				{ "include": "#number-octal" },
 				{ "include": "#number-binary" },
-				{ "include": "#keyword-inf" }
+				{ "include": "#keyword-inf" },
+				{ "include": "#keyword-nan" }
 			]
 		},
 
@@ -140,6 +141,11 @@
 		"keyword-inf": {
 			"name": "constant.language.infinity.ura",
 			"match": "\\binf\\b"
+		},
+
+		"keyword-nan": {
+			"name": "constant.language.nan.ura",
+			"match": "\\bnan\\b"
 		},
 
 		"boolean": {
