@@ -5,12 +5,14 @@
 
 	"patterns": [
 		{ "include": "#comment-line" },
+		{ "include": "#keyword-import" },
 		{ "include": "#variable-name" },
 		{ "include": "#key-name" },
 		{ "include": "#array-braces" },
 		{ "include": "#strings" },
 		{ "include": "#number" },
-		{ "include": "#boolean" }
+		{ "include": "#boolean" },
+		{ "include": "#keyword-null" }
 	],
 
 	"repository": {
@@ -112,6 +114,16 @@
 		"boolean": {
 			"name": "constant.language.boolean.ura",
 			"match": "\\b(true|false)\\b"
+		},
+
+		"keyword-import": {
+			"name": "keyword.other.import.ura",
+			"match": "\\bimport\\b"
+		},
+
+		"keyword-null": {
+			"name": "constant.language.ura",
+			"match": "\\bnull\\b"
 		}
 	}
 }
