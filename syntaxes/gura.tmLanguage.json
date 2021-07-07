@@ -10,7 +10,7 @@
 		{ "include": "#key-name" },
 		{ "include": "#array-braces" },
 		{ "include": "#strings" },
-		{ "include": "#number" },
+		{ "include": "#numbers" },
 		{ "include": "#boolean" },
 		{ "include": "#keyword-null" }
 	],
@@ -106,9 +106,40 @@
 			"end": "'''"
 		},
 
+		"numbers": {
+			"patterns": [
+				{ "include": "#number" },
+				{ "include": "#number-hex" },
+				{ "include": "#number-octal" },
+				{ "include": "#number-binary" },
+				{ "include": "#keyword-inf" }
+			]
+		},
+
 		"number": {
 			"name": "constant.numeric.ura",
-			"match": "([\\-+]?(?:[\\d_]+|\\.[\\d_]+|[\\d_]+\\.[\\d_]+))"
+			"match": "(?x)\n(?<!\\$)(?:\n  (?:\\b[0-9][0-9_]*(\\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*\\b)|\n  (?:\\b[0-9][0-9_]*(\\.)[eE][+-]?[0-9][0-9_]*\\b)|\n  (?:\\B(\\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*\\b)|\n  (?:\\b[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*\\b)|\n  (?:\\b[0-9][0-9_]*(\\.)[0-9][0-9_]*\\b)|\n  (?:\\b[0-9][0-9_]*(\\.)\\B)|\n  (?:\\B(\\.)[0-9][0-9_]*\\b)|\n  (?:\\b[0-9][0-9_]*\\b(?!\\.))\n)(?!\\$)"
+		},
+
+		"number-hex": {
+			"name": "constant.numeric.hex.ura",
+			"match": "\\b0x[\\da-fA-F][\\da-fA-F_]*\\b"
+		},
+
+		"number-octal": {
+			"name": "constant.numeric.octal.ura",
+			"match": "\\b0o[0-7][0-7_]*\\b"
+		},
+
+		"number-binary": {
+			"name": "constant.numeric.binary.ura",
+			"match": "\\b0b[01][01_]*\\b"
+		},
+
+
+		"keyword-inf": {
+			"name": "constant.language.infinity.ura",
+			"match": "\\binf\\b"
 		},
 
 		"boolean": {

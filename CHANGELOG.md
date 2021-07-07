@@ -1,3 +1,8 @@
+## 1.0.4
+
+- Improve number highlighting
+- Add highlighting for `inf`, hex, oct, and binary literals
+
 ## 1.0.3
 
 - Add highlighting for `null` and `import`
