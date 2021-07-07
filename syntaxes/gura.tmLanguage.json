@@ -1,0 +1,117 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Gura",
+	"scopeName": "source.ura",
+
+	"patterns": [
+		{ "include": "#comment-line" },
+		{ "include": "#variable-name" },
+		{ "include": "#key-name" },
+		{ "include": "#array-braces" },
+		{ "include": "#strings" },
+		{ "include": "#number" },
+		{ "include": "#boolean" }
+	],
+
+	"repository": {
+		"comment-line": {
+			"name": "comment.line.ura",
+			"begin": "#",
+			"end": "$"
+		},
+
+		"variable-name": {
+			"begin": "(?<!\\\\)(\\$\\w+)",
+			"beginCaptures": {
+				"1": { "name": "variable.parameter.ura" }
+			},
+			"end": "[^\\w]"
+		},
+
+		"key-name": {
+			"match": "(\\w+)(:)",
+			"captures": {
+				"1": { "name": "support.type.property-name.ura" },
+				"2": { "name": "keyword.operator.ura"}
+			}
+		},
+
+		"array-braces": {
+			"match": "(\\[)|(\\])",
+			"captures": {
+				"1": { "name": "punctuation.definition.array.start.ura" },
+				"2": { "name": "punctuation.definition.array.end.ura" }
+			}
+		},
+
+		"strings": {
+			"patterns": [
+				{ "include": "#triple-double-quote-string" },
+				{ "include": "#single-double-quote-string" },
+				{ "include": "#triple-single-quote-string" },
+				{ "include": "#single-single-quote-string" }
+			]
+		},
+
+		"escape-character": {
+			"name": "constant.character.escape.ura",
+			"match": "\\\\.|\\\\\\n"
+		},
+
+		"escape-unicode": {
+			"name": "constant.character.escape.ura",
+			"match": "\\\\u[\\da-fA-F]{4}"
+		},
+
+		"escape-unicode-long": {
+			"name": "constant.character.escape.ura",
+			"match": "\\\\U[\\da-fA-F]{8}"
+		},
+
+		"single-double-quote-string": {
+			"name": "string.quoted.ura",
+			"begin": "\"",
+			"end": "$|\"",
+			"patterns": [
+				{ "include": "#variable-name"},
+				{ "include": "#escape-unicode" },
+				{ "include": "#escape-unicode-long" },
+				{ "include": "#escape-character" }
+			]
+		},
+
+		"triple-double-quote-string": {
+			"name": "string.quoted.ura",
+			"begin": "\"\"\"",
+			"end": "\"\"\"",
+			"patterns": [
+				{ "include": "#variable-name"},
+				{ "include": "#escape-unicode" },
+				{ "include": "#escape-unicode-long" },
+				{ "include": "#escape-character" }
+			]
+		},
+
+		"single-single-quote-string": {
+			"name": "string.quoted.ura",
+			"begin": "'",
+			"end": "$|'"
+		},
+
+		"triple-single-quote-string": {
+			"name": "string.quoted.ura",
+			"begin": "'''",
+			"end": "'''"
+		},
+
+		"number": {
+			"name": "constant.numeric.ura",
+			"match": "([\\-+]?(?:[\\d_]+|\\.[\\d_]+|[\\d_]+\\.[\\d_]+))"
+		},
+
+		"boolean": {
+			"name": "constant.language.boolean.ura",
+			"match": "\\b(true|false)\\b"
+		}
+	}
+}

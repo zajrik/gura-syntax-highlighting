@@ -1,0 +1,17 @@
+// This is scrapped. I thought this was how I can add a file icon for the format
+// but it turns out this is just for adding full icon themes. You cannot add a
+// single icon without contributing an entire icon set for all file types at this
+// time.
+{
+	"iconDefinitions": {
+		"_gura_icon": {
+			"iconPath": "./images/gura.png"
+		}
+	},
+	"fileExtensions": {
+		"ura": "_gura_icon"
+	},
+	"languageIds": {
+		"ura": "_gura_icon"
+	}
+}
