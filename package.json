@@ -2,7 +2,7 @@
 	"name": "gura-syntax-highlight",
 	"displayName": "Gura Syntax Highlighting",
 	"description": "Provides syntax highlighting for the Gura configuration format (.ura)",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"repository": {
 		"url": "https://github.com/zajrik/gura-syntax-highlighting"
 	},

@@ -12,7 +12,8 @@
 		{ "include": "#strings" },
 		{ "include": "#numbers" },
 		{ "include": "#boolean" },
-		{ "include": "#keyword-null" }
+		{ "include": "#keyword-null" },
+		{ "include": "#keyword-empty" }
 	],
 
 	"repository": {
@@ -161,6 +162,11 @@
 		"keyword-null": {
 			"name": "constant.language.ura",
 			"match": "\\bnull\\b"
+		},
+
+		"keyword-empty": {
+			"name": "constant.language.ura",
+			"match": "\\bempty\\b"
 		}
 	}
 }
