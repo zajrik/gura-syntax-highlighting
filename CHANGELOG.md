@@ -1,3 +1,7 @@
+## 1.0.6
+
+- Add highlighting for `empty` keyword
+
 ## 1.0.5
 
 - Add highlighting for `nan`
